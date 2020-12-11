@@ -1,36 +1,23 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
+import {connect} from 'react-redux';
 
-export default function Navigation() {
+function Navigation({category}) {
     return (
         <nav className='Navigation'>
             <NavLink to='/New_user' >
                 <img src="../icons/Logo.png" alt="logo" className='Navigation_Logo'/>
             </NavLink>
             <ul className='Navigation-Links'>
-                <li className='Navigation-Link'>
-                    <NavLink to="/New_user" className='Navigation-Text'>
-                    <img className='Navigation-Img' src="./add_user.png" alt=""/>
-                    <span>Interior ceiling</span>
-                    </NavLink>
-                </li>
-                <li className='Navigation-Link' >
-                    <NavLink to="/User_list" className='Navigation-Text'>
-                    <img className='Navigation-Img' src="./user_list.png" alt=""/>Floor lamps
-                    </NavLink>
-                </li>
-                <li className='Navigation-Link'>
-                    <NavLink to="/About" className='Navigation-Text'>
-                    <img className='Navigation-Img' src="./about.png" alt=""/>
-                    <span>Exterior ceiling</span>
-                    </NavLink>
-                </li>
-                <li className='Navigation-Link'>
-                    <NavLink to="/Abouts" className='Navigation-Text'>
-                    <img className='Navigation-Img' src="./about.png" alt=""/>
-                    <span>Table lamps</span>
-                    </NavLink>
-                </li>
+                {/* category.IsLoading ? */ category.Categories.map((item) => {
+                    return (
+                            <li className='Navigation-Link'>
+                                    <NavLink to={`/${item.alias}`} className='Navigation-Text'>
+                                    <span>{item.title}</span>
+                                </NavLink>
+                            </li>
+                    )
+                }) /* : <div>zdarova banditi</div> */}
             </ul>
             <button className='Navigation-Panel'>
                 <img src="../icons/search.png" alt="search"/>
@@ -44,3 +31,9 @@ export default function Navigation() {
         </nav>   
     )
 }
+
+const mapStateToProps = (state) => ({
+    category: state.productCategories
+  })
+
+export default connect(mapStateToProps, null)(Navigation);
