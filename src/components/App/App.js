@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/actions'
 
 import './App.sass';
 
 import Navigation from '../Navigation/Navigation'
+import Products from '../Products/Products'
+import Categories from '../Categories/Categories'
 
 
 
@@ -13,31 +15,28 @@ class App extends Component {
 
   componentDidMount = () => {
     this.props.getCategories()
+    this.props.getProducts()
   }
 
   render() {
       return (
       <>
           <Router>
-              
               <Navigation />
               
+              
               <Switch>
-                <Route path="/About">
-                  hello
-                </Route>
-                <Route path="/User_list">
-                  qwe
-                </Route>
-                <Route path="/New_user">
-                  zdarova
-                </Route>
-                <Route path="/Abouts">
-                  zdarovaasd
-                </Route>
+              {this.props.category.Categories.map((item) => {
+                    return (
+											<Route path={`/${item.alias}`} key={item.id}>
+                      </Route>
+                    )
+                })}
                 <Route path="/">
-                  <Redirect to="/New_user" />
+                  <Categories/>
+                  <Products/>
                 </Route>
+
               </Switch>
           </Router>
         </>

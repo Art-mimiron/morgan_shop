@@ -23,3 +23,26 @@ export const getCategories = () => {
         .catch((e) => console.log(`cant load ${e}`) )
     }
 }
+// Product Items GET
+
+const productsLoading = () => ({type: 'PRODUCTS_LOADING'})
+
+const productsLoaded = () => ({type: 'PRODUCTS_LOADED'})
+
+const setProducts = (products) => ({
+    type: 'SET_PRODUCTS',
+    payload: products
+})
+
+export const getProducts = () => {
+    return (dispatch) => {
+        dispatch(productsLoading());
+        Axios.get('https://morgan-shop.herokuapp.com/products')
+        .then( (data) => {
+            console.log(data)
+            dispatch(setProducts(data.data.products));
+            dispatch(productsLoaded());
+        })
+        .catch((e) => console.log(`cant load ${e}`) )
+    }
+}

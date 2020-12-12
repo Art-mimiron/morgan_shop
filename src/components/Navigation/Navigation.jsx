@@ -5,19 +5,23 @@ import {connect} from 'react-redux';
 function Navigation({category}) {
     return (
         <nav className='Navigation'>
-            <NavLink to='/New_user' >
+            <NavLink to='/' >
                 <img src="../icons/Logo.png" alt="logo" className='Navigation_Logo'/>
             </NavLink>
             <ul className='Navigation-Links'>
-                {/* category.IsLoading ? */ category.Categories.map((item) => {
+                {category.IsLoading ? <div>zdarova banditi</div> : category.Categories.map((item) => {
                     return (
-                            <li className='Navigation-Link'>
-                                    <NavLink to={`/${item.alias}`} className='Navigation-Text'>
-                                    <span>{item.title}</span>
+                        <li className='Navigation-Link' 
+                        style={{order: item.menuOrder}}
+                        key={item.id}>
+                                <NavLink 
+                                to={`/${item.alias}`} 
+                                className='Navigation-Text'>
+                                <span>{item.title}</span>
                                 </NavLink>
-                            </li>
+                        </li>
                     )
-                }) /* : <div>zdarova banditi</div> */}
+                })}
             </ul>
             <button className='Navigation-Panel'>
                 <img src="../icons/search.png" alt="search"/>
