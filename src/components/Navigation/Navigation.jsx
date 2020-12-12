@@ -2,11 +2,17 @@ import React from 'react'
 import {NavLink} from "react-router-dom";
 import {connect} from 'react-redux';
 
-function Navigation({category}) {
+import * as actions from '../../actions/actions'
+
+function Navigation({category, categoryFilter}) {
     return (
         <nav className='Navigation'>
             <NavLink to='/' >
-                <img src="../icons/Logo.png" alt="logo" className='Navigation_Logo'/>
+                <img 
+                src="../icons/Logo.png" 
+                alt="logo" 
+                className='Navigation_Logo'
+                onClick={() => {categoryFilter('')}} />
             </NavLink>
             <ul className='Navigation-Links'>
                 {category.IsLoading ? <div>zdarova banditi</div> : category.Categories.map((item) => {
@@ -16,7 +22,8 @@ function Navigation({category}) {
                         key={item.id}>
                                 <NavLink 
                                 to={`/${item.alias}`} 
-                                className='Navigation-Text'>
+                                className='Navigation-Text'
+                                onClick={() => {categoryFilter(item.id)}}>
                                 <span>{item.title}</span>
                                 </NavLink>
                         </li>
@@ -40,4 +47,4 @@ const mapStateToProps = (state) => ({
     category: state.productCategories
   })
 
-export default connect(mapStateToProps, null)(Navigation);
+export default connect(mapStateToProps, actions)(Navigation);

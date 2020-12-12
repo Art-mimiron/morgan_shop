@@ -23,6 +23,7 @@ export const getCategories = () => {
         .catch((e) => console.log(`cant load ${e}`) )
     }
 }
+
 // Product Items GET
 
 const productsLoading = () => ({type: 'PRODUCTS_LOADING'})
@@ -46,3 +47,10 @@ export const getProducts = () => {
         .catch((e) => console.log(`cant load ${e}`) )
     }
 }
+
+// Filter items by category
+
+export const categoryFilter = (categoryID) => ({
+    type: 'SET_CATEGORY_FILTER',
+    payload: categoryID
+})

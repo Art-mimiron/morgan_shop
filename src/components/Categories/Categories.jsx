@@ -2,7 +2,9 @@ import React from 'react'
 import {NavLink} from "react-router-dom";
 import {connect} from 'react-redux';
 
-function Categories({category}) {
+import * as actions from '../../actions/actions'
+
+function Categories({category, categoryFilter}) {
 	return (
 			<ul className='Categories'>
 				{category.IsLoading ? <div>zdarova banditi</div> : category.Categories.map((item) => {
@@ -12,8 +14,9 @@ function Categories({category}) {
 						key={item.id}>
 								<NavLink 
 								to={`/${item.alias}`} 
-								className='Categories-Text'>
-								<span>{item.title}</span>
+								className='Categories-Text'
+								onClick={() => {categoryFilter(item.id)}}>
+									<span>{item.title}</span>
 									<img src={item.image} alt={item.alias} className='Categories-Picture'/>
 								</NavLink>
 						</li>
@@ -27,4 +30,4 @@ const mapStateToProps = (state) => ({
 	category: state.productCategories
   })
 
-export default connect(mapStateToProps, null)(Categories);
+export default connect(mapStateToProps, actions)(Categories);

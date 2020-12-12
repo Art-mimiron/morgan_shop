@@ -19,16 +19,15 @@ class App extends Component {
   }
 
   render() {
-      return (
+    return (
       <>
           <Router>
               <Navigation />
-              
-              
               <Switch>
               {this.props.category.Categories.map((item) => {
                     return (
-											<Route path={`/${item.alias}`} key={item.id}>
+                      <Route path={`/${item.alias}`} key={item.id}>
+                        <Products/>
                       </Route>
                     )
                 })}
@@ -36,7 +35,6 @@ class App extends Component {
                   <Categories/>
                   <Products/>
                 </Route>
-
               </Switch>
           </Router>
         </>
@@ -45,7 +43,8 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  category: state.productCategories
+  category: state.productCategories,
+  products: state.productItems
 })
 
 export default connect(mapStateToProps, actions)(App);

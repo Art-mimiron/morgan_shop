@@ -1,10 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import categoryFilter from '../../selectors/categoryFilterSelector'
+
 const ProductList = ({products}) => {
 	return (
 		<ul className='Product'>
-			{products.Products.map((item) => {
+			{products.map((item) => {
 				return(
 					<li className="Product-Item" key={item.id}>
 						<img src={item.image} alt={item.alias} className="Product-Picture"/>
@@ -21,7 +23,7 @@ const ProductList = ({products}) => {
 
 const mapStateToProps = (state) => {
 	return {
-		products: state.productItems
+		products: categoryFilter(state)
 	}
 }
 

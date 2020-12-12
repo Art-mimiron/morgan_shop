@@ -1,5 +1,5 @@
 const initialState = {
-    IsLoading: false,
+    IsLoading: true,
     Products: []
 }
 

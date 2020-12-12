@@ -1,6 +1,7 @@
 const initialState = {
     IsLoading: false,
-    Categories: []
+    Categories: [],
+    CategoryFilterID: ''
 }
 
 const productCategories = (state = initialState, action) => {
@@ -11,6 +12,8 @@ const productCategories = (state = initialState, action) => {
             return {...state, IsLoading: false}
         case 'SET_CATEGORIES':
             return {...state, Categories: action.payload}
+        case 'SET_CATEGORY_FILTER':
+            return {...state, CategoryFilterID: action.payload}
         default:
             return state
     }
