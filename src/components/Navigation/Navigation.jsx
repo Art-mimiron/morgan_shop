@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../../actions/actions'
 
-function Navigation({category, categoryFilter}) {
+function Navigation({category, categoryFilter, resetShowCount, cart}) {
     return (
         <nav className='Navigation'>
             <NavLink to='/' >
@@ -12,7 +12,7 @@ function Navigation({category, categoryFilter}) {
                 src="../icons/Logo.png" 
                 alt="logo" 
                 className='Navigation_Logo'
-                onClick={() => {categoryFilter('')}} />
+                onClick={() => {categoryFilter(''); resetShowCount()}} />
             </NavLink>
             <ul className='Navigation-Links'>
                 {category.IsLoading ? <div>zdarova banditi</div> : category.Categories.map((item) => {
@@ -23,7 +23,7 @@ function Navigation({category, categoryFilter}) {
                                 <NavLink 
                                 to={`/${item.alias}`} 
                                 className='Navigation-Text'
-                                onClick={() => {categoryFilter(item.id)}}>
+                                onClick={() => {categoryFilter(item.id); resetShowCount()}}>
                                 <span>{item.title}</span>
                                 </NavLink>
                         </li>
@@ -38,13 +38,15 @@ function Navigation({category, categoryFilter}) {
             </button>
             <button className='Navigation-Panel'>
                 <img src="../icons/cart.png" alt="cart"/>
+                {cart.length}
             </button>
         </nav>   
     )
 }
 
 const mapStateToProps = (state) => ({
-    category: state.productCategories
+    category: state.productCategories,
+    cart: state.cart
   })
 
 export default connect(mapStateToProps, actions)(Navigation);

@@ -54,3 +54,32 @@ export const categoryFilter = (categoryID) => ({
     type: 'SET_CATEGORY_FILTER',
     payload: categoryID
 })
+
+// Show more products
+
+export const showMore = (num) => ({
+    type: 'SHOW_MORE',
+    payload: num + 8
+})
+
+export const resetShowCount = () => ({
+    type: 'RESET_SHOW_MORE',
+})
+
+// cart
+
+export const buyItem = (item) => ({
+    type: 'BUY_ITEM',
+    payload: {
+        id: item.id, 
+        name: item.name, 
+        alias: item.alias, 
+        price: item.price, 
+        image: item.image
+    }
+})
+
+export const removeItem = (id) => ({
+    type: 'REMOVE_ITEM',
+    payload: id
+})

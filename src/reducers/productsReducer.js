@@ -1,5 +1,6 @@
 const initialState = {
     IsLoading: true,
+    renderSize: 12,
     Products: []
 }
 
@@ -11,6 +12,10 @@ const productItems = (state = initialState, action) => {
             return {...state, IsLoading: false};
         case 'SET_PRODUCTS':
             return {...state, Products: action.payload};
+        case 'SHOW_MORE':
+            return {...state, renderSize: action.payload}
+        case 'RESET_SHOW_MORE':
+            return {...state, renderSize: 12}
         default:
             return state
     }

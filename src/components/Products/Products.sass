@@ -3,11 +3,13 @@
     display: flex
     flex-wrap: wrap
     padding: 0
+    justify-content: center
     &-Item
         width: 272px
         height: 358px
         background: #F0F0F0
         margin: 8px
+        position: relative
     &-Picture
         height: 272px
     &-Description
@@ -19,3 +21,40 @@
         color: #121212
     &-Price
         font-weight: 500
+    &-Loader
+        margin: 0 auto
+        display: block
+        width: 112px
+        height: 41px
+        border: 1px solid #121212
+        font-weight: 500
+        font-size: 14px
+        line-height: 21px
+        color: #121212
+    &-Btn
+        position: absolute
+        height: 20px
+        width: 20px
+        border: 2px solid black
+        top: 13px
+        right: 14px
+        background-color: rgba(255, 255, 255, 0)
+        &::before
+            content: ''
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            width: 7px
+            height: 2px
+            background-color: black
+        &::after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            height: 7px
+            width: 2px
+            background-color: black
