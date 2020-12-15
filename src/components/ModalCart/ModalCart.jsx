@@ -14,13 +14,13 @@ const ModalCart = ({cart}) => {
                             <img src={product.image} alt={product.alias} className="ModalCart-Picture"/>
                             <div className="ModalCart-Description">
                                 <div className="ModalCart-Name">{product.name}</div>
-                                <div className="ModalCart-Price">{product.counter}X ${product.price}</div>
+                                <div className="ModalCart-Price">{product.counter}X ${product.price}.00</div>
                             </div>
                         </li>
                     )
                 })}
             </ul>
-            <NavLink to='/Cart' className="ModalCart-Button">GO TO CHECKOUT</NavLink>
+            <NavLink to='/cart' className="ModalCart-Button">GO TO CHECKOUT</NavLink>
         </div>
     )
 }

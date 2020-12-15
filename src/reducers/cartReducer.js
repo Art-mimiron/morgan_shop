@@ -11,13 +11,17 @@ const cart = (state = initialState, action) => {
                 return {...state}
             } else return {...state, cart: [...state.cart, action.payload]};
             
-        case 'REMOVE_ITEM':
+        case 'DECREASE_ITEM':
             if (state.cart[state.cart.findIndex(elem => elem.id === action.payload)].counter > 1) {
                 state.cart[state.cart.findIndex(elem => elem.id === action.payload)].counter--;
                 return {...state}
             } else return {...state, cart: [...state.cart.filter(item => item.id !== action.payload)]}
+        case 'REMOVE_ITEM':
+            return {...state, cart: [...state.cart.filter(item => item.id !== action.payload)]}
         case 'MODAL_RENDER':
             return {renderModal: !state.renderModal, cart: [...state.cart]}
+        case 'SET_ITEM_COUNT':
+            return
         default:
             return state
     }

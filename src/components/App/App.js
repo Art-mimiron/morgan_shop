@@ -32,12 +32,12 @@ class App extends Component {
                       </Route>
                     )
                 })}
+                <Route path="/cart">
+                  <Cart/>
+                </Route>
                 <Route path="/">
                   <Categories/>
                   <Products/>
-                </Route>
-                <Route path="/cart">
-                  <Cart/>
                 </Route>
               </Switch>
           </Router>

@@ -24,7 +24,7 @@ const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem
 							<img src={item.image} alt={item.alias} className="Product-Picture"/>
 							<div className="Product-Description">
 								<div className="Product-Name">{item.name}</div>
-								<div className="Product-Price">${item.price}</div>
+								<div className="Product-Price">${item.price}.00</div>
 							</div>
 							<button 
 							className={cart.cart.some(elem => elem.id === item.id) ? 

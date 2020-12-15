@@ -73,6 +73,10 @@ export const buyItem = (item) => ({
     payload: {...item, counter: 1}
 })
 
+export const decreseItem = (id) => ({
+    type: 'DECREASE_ITEM',
+    payload: id
+})
 export const removeItem = (id) => ({
     type: 'REMOVE_ITEM',
     payload: id
@@ -86,3 +90,8 @@ export const sortProducts = (sortType) => ({
 export const modalCartTrigger = () => ({
         type: 'MODAL_RENDER' 
 })
+
+export const setItemCount = (count) => ({
+        type: 'SET_ITEM_COUNT',
+        payload: count.replace(/\w\s/g, '')
+}) 
