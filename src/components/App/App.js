@@ -8,6 +8,7 @@ import './App.sass';
 import Navigation from '../Navigation/Navigation'
 import Products from '../Products/Products'
 import Categories from '../Categories/Categories'
+import Cart from '../Cart/Cart'
 
 
 
@@ -34,6 +35,9 @@ class App extends Component {
                 <Route path="/">
                   <Categories/>
                   <Products/>
+                </Route>
+                <Route path="/cart">
+                  <Cart/>
                 </Route>
               </Switch>
           </Router>

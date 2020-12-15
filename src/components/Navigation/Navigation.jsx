@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 
 import * as actions from '../../actions/actions'
 
-function Navigation({category, categoryFilter, resetShowCount, cart}) {
+import ModalCart from '../ModalCart/ModalCart' 
+
+function Navigation({category, categoryFilter, resetShowCount, cart, modalCartTrigger}) {
     return (
         <nav className='Navigation'>
             <NavLink to='/' >
@@ -36,9 +38,13 @@ function Navigation({category, categoryFilter, resetShowCount, cart}) {
             <button className='Navigation-Panel'>
                 <img src="../icons/user.png" alt="user"/>
             </button>
-            <button className='Navigation-Panel'>
+            <button 
+            className='Navigation-Panel'
+            onMouseEnter={modalCartTrigger}
+            onMouseLeave={modalCartTrigger}>
                 <img src="../icons/cart.png" alt="cart"/>
-                {cart.length}
+                {cart.cart.length}
+                {cart.renderModal ? <ModalCart/> : null}
             </button>
         </nav>   
     )

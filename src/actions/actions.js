@@ -70,16 +70,19 @@ export const resetShowCount = () => ({
 
 export const buyItem = (item) => ({
     type: 'BUY_ITEM',
-    payload: {
-        id: item.id, 
-        name: item.name, 
-        alias: item.alias, 
-        price: item.price, 
-        image: item.image
-    }
+    payload: {...item, counter: 1}
 })
 
 export const removeItem = (id) => ({
     type: 'REMOVE_ITEM',
     payload: id
+})
+
+export const sortProducts = (sortType) => ({
+        type: 'SORT_PRODUCTS',
+        payload: sortType
+})
+
+export const modalCartTrigger = () => ({
+        type: 'MODAL_RENDER' 
 })
