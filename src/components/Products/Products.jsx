@@ -8,7 +8,7 @@ import categoryFilter from '../../selectors/categoryFilterSelector'
 
 const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem, sortProducts}) => {
 	return (
-		<>
+		<div className='Product'>
 			<select 
 			name="sort" 
 			id="productSort"
@@ -17,7 +17,7 @@ const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem
 				<option value="Hight_price">Price hight to low</option>
 				<option value="Low_price">Price low to hight</option>
 			</select>
-			<ul className='Product'>
+			<ul className='Product-List'>
 				{products.slice(0, renderCount).map((item) => {
 					return(
 						<li className="Product-Item" key={item.id}>
@@ -45,7 +45,7 @@ const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem
 				className='Product-Loader'>
 					Show more
 				</button> }
-		</>
+		</div>
 	)
 }
 

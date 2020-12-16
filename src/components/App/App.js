@@ -32,8 +32,8 @@ class App extends Component {
                     return (
                       <Route path={`/${item.alias}`} key={item.id}>
                         <Products/>
-                        )
                       </Route>
+                    )
                 })}
                 <Route path="/cart">
                   <Cart/>
