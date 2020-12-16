@@ -9,9 +9,11 @@ button {
   background-color: inherit;
   cursor: pointer;
   outline: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
+  padding-top: 70px;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

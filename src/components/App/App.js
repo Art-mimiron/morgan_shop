@@ -9,6 +9,9 @@ import Navigation from '../Navigation/Navigation'
 import Products from '../Products/Products'
 import Categories from '../Categories/Categories'
 import Cart from '../Cart/Cart'
+import LoginPage from '../LoginPage/LoginPage'
+import RegistrationPage from '../RegistrationPage/RegistrationPage'
+import ResetPassword from '../ResetPassword/ResetPassword'
 
 
 
@@ -29,11 +32,20 @@ class App extends Component {
                     return (
                       <Route path={`/${item.alias}`} key={item.id}>
                         <Products/>
+                        )
                       </Route>
-                    )
                 })}
                 <Route path="/cart">
                   <Cart/>
+                </Route>
+                <Route path="/login">
+                  <LoginPage/>
+                </Route>
+                <Route path="/registration">
+                  <RegistrationPage/>
+                </Route>
+                <Route path="/password-reset">
+                  <ResetPassword/>
                 </Route>
                 <Route path="/">
                   <Categories/>

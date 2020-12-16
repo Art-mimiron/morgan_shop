@@ -6,7 +6,7 @@ import * as actions from '../../actions/actions'
 
 import ModalCart from '../ModalCart/ModalCart' 
 
-function Navigation({category, categoryFilter, resetShowCount, cart, modalCartTrigger}) {
+const Navigation = ({category, categoryFilter, resetShowCount, cart, modalCartTrigger}) => {
     return (
         <nav className='Navigation'>
             <NavLink to='/' >
@@ -35,9 +35,9 @@ function Navigation({category, categoryFilter, resetShowCount, cart, modalCartTr
             <button className='Navigation-Panel'>
                 <img src="../icons/search.png" alt="search"/>
             </button>
-            <button className='Navigation-Panel'>
+            <NavLink to='/login' className='Navigation-Panel'>
                 <img src="../icons/user.png" alt="user"/>
-            </button>
+            </NavLink>
             <button 
             className='Navigation-Panel'
             onMouseEnter={modalCartTrigger}

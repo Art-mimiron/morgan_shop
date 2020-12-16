@@ -21,7 +21,8 @@ const cart = (state = initialState, action) => {
         case 'MODAL_RENDER':
             return {renderModal: !state.renderModal, cart: [...state.cart]}
         case 'SET_ITEM_COUNT':
-            return
+            state.cart[state.cart.findIndex(elem => elem.id === action.payload.getAttribute("data-id"))].counter = action.payload.value
+            return {...state}
         default:
             return state
     }

@@ -11,7 +11,7 @@ const ModalCart = ({cart}) => {
                 {cart.cart.map((product) => {
                     return (
                         <li className="ModalCart-Item" key={product.id}>
-                            <img src={product.image} alt={product.alias} className="ModalCart-Picture"/>
+                            <img src={'https://morgan-shop.herokuapp.com'+product.image} alt={product.alias} className="ModalCart-Picture"/>
                             <div className="ModalCart-Description">
                                 <div className="ModalCart-Name">{product.name}</div>
                                 <div className="ModalCart-Price">{product.counter}X ${product.price}.00</div>

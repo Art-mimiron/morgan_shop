@@ -21,7 +21,7 @@ const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem
 				{products.slice(0, renderCount).map((item) => {
 					return(
 						<li className="Product-Item" key={item.id}>
-							<img src={item.image} alt={item.alias} className="Product-Picture"/>
+							<img src={'https://morgan-shop.herokuapp.com'+item.image} alt={item.alias} className="Product-Picture"/>
 							<div className="Product-Description">
 								<div className="Product-Name">{item.name}</div>
 								<div className="Product-Price">${item.price}.00</div>
@@ -37,11 +37,14 @@ const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem
 					)
 				})}
 			</ul>
-			<button 
-			onClick={() => showMore(renderCount)} 
-			className='Product-Loader'>
-				Show more
-			</button>
+			{products.length <= renderCount ? 
+				null
+				:
+				<button 
+				onClick={() => showMore(renderCount)} 
+				className='Product-Loader'>
+					Show more
+				</button> }
 		</>
 	)
 }

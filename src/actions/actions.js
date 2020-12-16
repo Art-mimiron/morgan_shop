@@ -16,7 +16,6 @@ export const getCategories = () => {
         dispatch(categoriesLoading());
         Axios.get('https://morgan-shop.herokuapp.com/categories')
         .then( (data) => {
-            console.log(data)
             dispatch(setCategories(data.data.categories));
             dispatch(categoriesLoaded());
         })
@@ -40,7 +39,6 @@ export const getProducts = () => {
         dispatch(productsLoading());
         Axios.get('https://morgan-shop.herokuapp.com/products')
         .then( (data) => {
-            console.log(data)
             dispatch(setProducts(data.data.products));
             dispatch(productsLoaded());
         })
@@ -91,7 +89,7 @@ export const modalCartTrigger = () => ({
         type: 'MODAL_RENDER' 
 })
 
-export const setItemCount = (count) => ({
+export const setItemCount = (target) => ({
         type: 'SET_ITEM_COUNT',
-        payload: count.replace(/\w\s/g, '')
+        payload: target
 }) 
