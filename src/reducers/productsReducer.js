@@ -1,7 +1,8 @@
 const initialState = {
     IsLoading: true,
     renderSize: 12,
-    Products: []
+    Products: [],
+    sortType: 'Newness'
 }
 
 const productItems = (state = initialState, action) => {
@@ -17,7 +18,7 @@ const productItems = (state = initialState, action) => {
         case 'RESET_SHOW_MORE':
             return {...state, renderSize: 12}
         case 'SORT_PRODUCTS':
-            return {...state, Products: [...state.Products.sort((a,b) => {
+            return {...state, sortType: action.payload, Products: [...state.Products.sort((a,b) => {
                         switch(action.payload) {
                             case 'Newness':
                                 return new Date(b.timeStamp) - new Date(a.timeStamp);

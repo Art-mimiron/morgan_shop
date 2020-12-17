@@ -6,14 +6,15 @@ import categoryFilter from '../../selectors/categoryFilterSelector'
 
 
 
-const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem, sortProducts}) => {
+const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem, sortProducts, sort}) => {
 	return (
 		<div className='Product'>
 			<select 
 			name="sort" 
 			id="productSort"
+			defaultValue={sort}
 			onChange={(e) => sortProducts(e.target.value)}>
-				<option defaultValue="Newness">Newness</option>
+				<option value="Newness">Newness</option>
 				<option value="Hight_price">Price hight to low</option>
 				<option value="Low_price">Price low to hight</option>
 			</select>
@@ -53,6 +54,7 @@ const mapStateToProps = (state) => {
 	return {
 		products: categoryFilter(state),
 		renderCount: state.productItems.renderSize,
+		sort: state.productItems.sortType,
 		cart: state.cart
 	}
 }

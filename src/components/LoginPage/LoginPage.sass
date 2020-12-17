@@ -82,11 +82,45 @@
         display: flex
         justify-content: space-between
     &-Social
+        display: flex
         width: 176px
         height: 48px
         border: 1px solid #6D6D6D
         font-size: 14px
-        line-height: 21px
+        line-height: 24px
         color: #121212
-
-    
+        align-items: center
+        justify-content: center
+    &-SocialIcon
+        margin-right: 8px
+    &-Private
+        position: absolute
+        right: 13px
+        bottom: 3px
+        background-color: #fff
+.invalid-mail
+    position: relative
+    &::after
+        content: 'Please make sure your email format is correct'
+        display: block
+        font-weight: normal
+        font-size: 12px
+        line-height: 22px
+        letter-spacing: 0.01em
+        color: #D92222
+        position: absolute
+    input
+        border-color: #D92222
+.invalid-pass
+    position: relative
+    &::after
+        content: 'Please enter a password that meets security standard'
+        display: block
+        font-weight: normal
+        font-size: 12px 
+        line-height: 22px
+        letter-spacing: 0.01em
+        color: #D92222
+        position: absolute
+    input
+        border-color: #D92222

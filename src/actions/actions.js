@@ -1,5 +1,8 @@
 import Axios from 'axios'
 
+import emailValidation from '../utils/emailValidation'
+import passValidation from '../utils/passValidation'
+
 // Product Categories GET
 
 const categoriesLoading = () => ({type: 'CATEGORIES_LOADING'})
@@ -75,10 +78,18 @@ export const decreseItem = (id) => ({
     type: 'DECREASE_ITEM',
     payload: id
 })
+
 export const removeItem = (id) => ({
     type: 'REMOVE_ITEM',
     payload: id
 })
+
+export const setItemCount = (target) => ({
+        type: 'SET_ITEM_COUNT',
+        payload: target
+}) 
+
+// sort items + show more
 
 export const sortProducts = (sortType) => ({
         type: 'SORT_PRODUCTS',
@@ -89,7 +100,18 @@ export const modalCartTrigger = () => ({
         type: 'MODAL_RENDER' 
 })
 
-export const setItemCount = (target) => ({
-        type: 'SET_ITEM_COUNT',
-        payload: target
-}) 
+// user account 
+
+ export const loginAccout = (mail) => ({
+        type: 'USER_LOGIN',
+        payload: emailValidation(mail)
+ })
+
+ export const loginPassword = (pass) => ({
+        type: 'USER_PASSWORD',
+        payload: passValidation(pass)
+ })
+
+ export const toglePassVisibility = () => ({
+        type: 'TOGLE_PASS_VISIBILITY'
+ })
