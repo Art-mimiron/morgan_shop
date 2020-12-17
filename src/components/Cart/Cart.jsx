@@ -83,7 +83,7 @@ const Cart = ({cart, category, removeItem, buyItem, decreseItem, setItemCount}) 
         return (
             <div className="EmptyCart">
                 <div className="EmptyCart-Header">CART</div>
-                <img src="../icons/empty_cart.png" alt="empty_cart" className="EmptyCart-Picture"/>
+                <img src="./img/empty_cart.png" alt="empty_cart" className="EmptyCart-Picture"/>
                 <div className="EmptyCart-Subheader">Your cart is empty</div>
                 <button ></button>
                 <NavLink to='/' className="EmptyCart-Button" >START SHOPPING</NavLink>

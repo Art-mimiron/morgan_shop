@@ -11,7 +11,7 @@ const Navigation = ({category, categoryFilter, resetShowCount, cart, modalCartTr
         <nav className='Navigation'>
             <NavLink to='/' >
                 <img 
-                src="../icons/Logo.png" 
+                src='./img/Logo.png'
                 alt="logo" 
                 className='Navigation_Logo'
                 onClick={() => {categoryFilter(''); resetShowCount()}} />
@@ -33,16 +33,16 @@ const Navigation = ({category, categoryFilter, resetShowCount, cart, modalCartTr
                 })}
             </ul>
             <button className='Navigation-Panel'>
-                <img src="../icons/search.png" alt="search"/>
+                <img src="./img/search.png" alt="search"/>
             </button>
             <NavLink to='/login' className='Navigation-Panel'>
-                <img src="../icons/user.png" alt="user"/>
+                <img src="./img/user.png" alt="user"/>
             </NavLink>
             <button 
             className='Navigation-Panel'
             onMouseEnter={modalCartTrigger}
             onMouseLeave={modalCartTrigger}>
-                <img src="../icons/cart.png" alt="cart"/>
+                <img src="./img/cart.png" alt="cart"/>
                 {cart.cart.length}
                 {cart.renderModal ? <ModalCart/> : null}
             </button>
