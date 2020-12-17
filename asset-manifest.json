@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/morgan_shop/static/css/main.d074ebd0.chunk.css",
+    "main.js": "/morgan_shop/static/js/main.13ff50db.chunk.js",
+    "main.js.map": "/morgan_shop/static/js/main.13ff50db.chunk.js.map",
+    "runtime-main.js": "/morgan_shop/static/js/runtime-main.a128a66f.js",
+    "runtime-main.js.map": "/morgan_shop/static/js/runtime-main.a128a66f.js.map",
+    "static/js/2.ecfe768d.chunk.js": "/morgan_shop/static/js/2.ecfe768d.chunk.js",
+    "static/js/2.ecfe768d.chunk.js.map": "/morgan_shop/static/js/2.ecfe768d.chunk.js.map",
+    "index.html": "/morgan_shop/index.html",
+    "static/css/main.d074ebd0.chunk.css.map": "/morgan_shop/static/css/main.d074ebd0.chunk.css.map",
+    "static/js/2.ecfe768d.chunk.js.LICENSE.txt": "/morgan_shop/static/js/2.ecfe768d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a128a66f.js",
+    "static/js/2.ecfe768d.chunk.js",
+    "static/css/main.d074ebd0.chunk.css",
+    "static/js/main.13ff50db.chunk.js"
+  ]
+}
