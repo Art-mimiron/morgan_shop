@@ -15,7 +15,7 @@ const ModalCart = ({cart}) => {
                                 <img src={'https://morgan-shop.herokuapp.com'+product.image} alt={product.alias} className="ModalCart-Picture"/>
                                 <div className="ModalCart-Description">
                                     <div className="ModalCart-Name">{product.name}</div>
-                                    <div className="ModalCart-Price"><span className='ModalCart-Count'>{product.counter}X</span> ${product.price}.00</div>
+                                    <div className="ModalCart-Price"><span className='ModalCart-Count'>{product.counter} x</span> £{product.price}.00</div>
                                 </div>
                             </li>
                         )

@@ -12,6 +12,7 @@ import Cart from '../Cart/Cart'
 import LoginPage from '../LoginPage/LoginPage'
 import RegistrationPage from '../RegistrationPage/RegistrationPage'
 import ResetPassword from '../ResetPassword/ResetPassword'
+import ConfirmedOrder from '../ConfirmedOrder/ConfirmedOrder'
 
 
 
@@ -37,6 +38,9 @@ class App extends Component {
                 })}
                 <Route path="/cart">
                   <Cart/>
+                </Route>
+                <Route path="/order">
+                  <ConfirmedOrder/>
                 </Route>
                 <Route path="/login">
                   <LoginPage/>

@@ -23,6 +23,8 @@ const cart = (state = initialState, action) => {
         case 'SET_ITEM_COUNT':
             state.cart[state.cart.findIndex(elem => elem.id === action.payload.getAttribute("data-id"))].counter = action.payload.value
             return {...state}
+        case 'CLEAN_CART':
+            return {...initialState}
         default:
             return state
     }

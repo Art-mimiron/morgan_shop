@@ -6,12 +6,17 @@ import * as actions from '../../actions/actions'
 
 import ModalCart from '../ModalCart/ModalCart' 
 
+import logo from '../../img/Logo.png'
+import search from '../../img/search.png'
+import user from '../../img/user.png'
+import cartIcon from '../../img/cart.png'
+
 const Navigation = ({category, categoryFilter, resetShowCount, cart, modalCartTrigger}) => {
     return (
         <nav className='Navigation'>
             <NavLink to='/' >
                 <img 
-                src='./img/Logo.png'
+                src={logo}
                 alt="logo" 
                 className='Navigation_Logo'
                 onClick={() => {categoryFilter(''); resetShowCount()}} />
@@ -33,16 +38,16 @@ const Navigation = ({category, categoryFilter, resetShowCount, cart, modalCartTr
                 })}
             </ul>
             <button className='Navigation-Panel'>
-                <img src="./img/search.png" alt="search"/>
+                <img src={search} alt="search"/>
             </button>
             <NavLink to='/login' className='Navigation-Panel'>
-                <img src="./img/user.png" alt="user"/>
+                <img src={user} alt="user"/>
             </NavLink>
             <button 
             className='Navigation-Panel'
-            onMouseEnter={modalCartTrigger}
-            onMouseLeave={modalCartTrigger}>
-                <img src="./img/cart.png" alt="cart"/>
+            onMouseEnter={cart.cart.length > 0 ? modalCartTrigger : null}
+            onMouseLeave={cart.cart.length > 0 ? modalCartTrigger : null}>
+                <img src={cartIcon} alt=''/>
                 {cart.cart.length}
                 {cart.renderModal ? <ModalCart/> : null}
             </button>

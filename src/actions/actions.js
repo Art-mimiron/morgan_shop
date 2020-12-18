@@ -89,6 +89,10 @@ export const setItemCount = (target) => ({
         payload: target
 }) 
 
+export const cleanCart = () => ({
+        type: 'CLEAN_CART'
+})
+
 // sort items + show more
 
 export const sortProducts = (sortType) => ({

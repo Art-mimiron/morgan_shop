@@ -2,35 +2,58 @@
     &-Title
         text-align: center
         padding-top: 50px
+    &-List
+        margin: 35px 0 0 200px
     &-Item
         width: 656px
         height: 185px
         display: flex
+        margin-bottom: 25px
     &-Inner
         width: 100%
         display: flex
         flex-direction: column
         justify-content: space-between
         border-bottom: 1px solid #DEDEDE
+        padding-bottom: 25px
     &-Picture
         height: 185px
         margin-right: 20px
     &-Header
         display: flex
         justify-content: space-between
+        align-items: flex-start
     &-Category
         font-weight: normal
         font-size: 12px
         line-height: 22px
         letter-spacing: 0.01em
+        color: #6D6D6D
     &-Name
         font-weight: normal
         font-size: 18px
         line-height: 27px
         color: #121212
+    &-Delivery, &-Estimated, &-Name_shortlist
+        font-size: 12px
+        line-height: 22px
+        letter-spacing: 0.01em
+    &-Estimated
+        color: #6D6D6D
+    &-Price
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        color: #121212
+    &-Fee, &-TotalPrice, &-Price_shortlist
+        font-weight: normal
+        font-size: 12px
+        line-height: 22px
+        letter-spacing: 0.01em
     &-Footer
         display: flex
         justify-content: space-between
+        align-items: flex-end
     &-Quantity
         font-weight: normal
         font-size: 12px
@@ -40,24 +63,42 @@
     &-Decrease, &-Increase
         width: 32px
         height: 32px
-        border: 2px solid #121212
+        border: 1px solid #121212
     &-Count
         width: 32px
         height: 32px
         margin: 0 8px
+        border: 1px solid #DEDEDE
+        text-align: center
+        font-size: 14px
+        line-height: 21px
+        color: #121212
     &-Order
         position: fixed
         top: 25%
         right: 10%
         width: 272px
-        height: 250px
+        min-height: 250px
         border: 1px solid #DEDEDE
-        padding: 8px 12px
+        padding: 8px 12px 60px 12px
         display: flex
         flex-direction: column
         justify-content: space-between
+    &-OrderList
+        margin-top: 10px
+    &-Product
+        margin-bottom: 10px
     &-Product, &-Express, &-Total
         display: flex
         justify-content: space-between
     &-Express
         border-bottom: 1px solid rgba(109, 109, 109, 0.12)
+        padding: 8px 0 18px 0
+    &-Total
+        margin-top: 16px
+    &-Summary
+        font-weight: normal
+        font-size: 12px
+        line-height: 22px
+        letter-spacing: 0.01em
+        color: #6D6D6D

@@ -4,7 +4,10 @@ import {connect} from 'react-redux';
 
 import * as actions from '../../actions/actions'
 
-
+import showPassIcon from '../../img/eye.svg'
+import hidePassIcon from '../../img/ic_eye.svg'
+import googleIcon from '../../img/ic_google.svg'
+import facebookIcon from '../../img/ic_facebook.svg'
 
 const LoginPage = ({usersData, loginAccout, loginPassword, toglePassVisibility}) => {
     return (
@@ -31,7 +34,7 @@ const LoginPage = ({usersData, loginAccout, loginPassword, toglePassVisibility})
                 onChange={(e) => loginPassword(e)}/>
                 <button className='Login-Private'
                 onClick={toglePassVisibility}>
-                        <img src={usersData.login.showPassword ? "../icons/eye.svg" : "../icons/ic_eye.svg"} alt=''/>
+                        <img src={usersData.login.showPassword ? showPassIcon : hidePassIcon} alt=''/>
                 </button>
                 <NavLink to='/password-reset' className="Login-Link Login-Link_password">Forgotten your password?</NavLink>
                 </label>
@@ -44,11 +47,11 @@ const LoginPage = ({usersData, loginAccout, loginPassword, toglePassVisibility})
             <div className="Login-Divider">or</div>
             <div className="Login-Option">
                 <button className="Login-Social">
-                <img src="../icons/ic_google.svg" alt="" className="Login-SocialIcon"/>
+                <img src={googleIcon} alt="" className="Login-SocialIcon"/>
                     With Google
                 </button>
                 <button className="Login-Social">
-                <img src="../icons/ic_facebook.svg" alt="" className="Login-SocialIcon"/>
+                <img src={facebookIcon} alt="" className="Login-SocialIcon"/>
                     With Facebook
                 </button>
             </div>
