@@ -88,7 +88,7 @@ const Cart = ({cart, category, removeItem, buyItem, decreseItem, setItemCount, c
                 <img src={ecart} alt="empty_cart" className="Ordering-Picture"/>
                 <div className="Ordering-Subheader Ordering-Subheader_middle">Your cart is empty</div>
                 
-                <NavLink to='/' className="Ordering-Button" >START SHOPPING</NavLink>
+                <NavLink to='/' className="Ordering-Button Ordering-Button_black" >START SHOPPING</NavLink>
             </div>
         )
     }

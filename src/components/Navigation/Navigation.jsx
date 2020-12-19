@@ -14,43 +14,47 @@ import cartIcon from '../../img/cart.png'
 const Navigation = ({category, categoryFilter, resetShowCount, cart, modalCartTrigger}) => {
     return (
         <nav className='Navigation'>
-            <NavLink to='/' >
-                <img 
-                src={logo}
-                alt="logo" 
-                className='Navigation_Logo'
-                onClick={() => {categoryFilter(''); resetShowCount()}} />
-            </NavLink>
-            <ul className='Navigation-Links'>
-                {category.IsLoading ? <div>zdarova banditi</div> : category.Categories.map((item) => {
-                    return (
-                        <li className='Navigation-Link' 
-                        style={{order: item.menuOrder}}
-                        key={item.id}>
-                                <NavLink 
-                                to={`/${item.alias}`} 
-                                className='Navigation-Text'
-                                onClick={() => {categoryFilter(item.id); resetShowCount()}}>
-                                <span>{item.title}</span>
-                                </NavLink>
-                        </li>
-                    )
-                })}
-            </ul>
-            <button className='Navigation-Panel'>
-                <img src={search} alt="search"/>
-            </button>
-            <NavLink to='/login' className='Navigation-Panel'>
-                <img src={user} alt="user"/>
-            </NavLink>
-            <button 
-            className='Navigation-Panel'
-            onMouseEnter={cart.cart.length > 0 ? modalCartTrigger : null}
-            onMouseLeave={cart.cart.length > 0 ? modalCartTrigger : null}>
-                <img src={cartIcon} alt=''/>
-                {cart.cart.length}
-                {cart.renderModal ? <ModalCart/> : null}
-            </button>
+            <div className="Navigation-URLs">
+                <NavLink to='/' >
+                    <img 
+                    src={logo}
+                    alt="logo" 
+                    className='Navigation_Logo'
+                    onClick={() => {categoryFilter(''); resetShowCount()}} />
+                </NavLink>
+                <ul className='Navigation-Links'>
+                    {category.IsLoading ? <div>zdarova banditi</div> : category.Categories.map((item) => {
+                        return (
+                            <li className='Navigation-Link' 
+                            style={{order: item.menuOrder}}
+                            key={item.id}>
+                                    <NavLink 
+                                    to={`/${item.alias}`} 
+                                    className='Navigation-Text'
+                                    onClick={() => {categoryFilter(item.id); resetShowCount()}}>
+                                    <span>{item.title}</span>
+                                    </NavLink>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+            <div className="Navigation-Buttons">
+                <button className='Navigation-Panel'>
+                    <img src={search} alt="search"/>
+                </button>
+                <NavLink to='/login' className='Navigation-Panel'>
+                    <img src={user} alt="user"/>
+                </NavLink>
+                <button 
+                className='Navigation-Panel'
+                onMouseEnter={cart.cart.length > 0 ? modalCartTrigger : null}
+                onMouseLeave={cart.cart.length > 0 ? modalCartTrigger : null}>
+                    <img src={cartIcon} alt=''/>
+                    {cart.cart.length}
+                    {cart.renderModal ? <ModalCart/> : null}
+                </button>
+            </div>
         </nav>   
     )
 }

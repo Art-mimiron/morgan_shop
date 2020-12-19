@@ -13,7 +13,7 @@ import LoginPage from '../LoginPage/LoginPage'
 import RegistrationPage from '../RegistrationPage/RegistrationPage'
 import ResetPassword from '../ResetPassword/ResetPassword'
 import ConfirmedOrder from '../ConfirmedOrder/ConfirmedOrder'
-
+import ResetPasswordConfirm from '../ResetPasswordConfirm/ResetPasswordConfirm'
 
 
 class App extends Component {
@@ -50,6 +50,9 @@ class App extends Component {
                 </Route>
                 <Route path="/password-reset">
                   <ResetPassword/>
+                </Route>
+                <Route path="/password-reset-confirm">
+                  <ResetPasswordConfirm/>
                 </Route>
                 <Route path="/">
                   <Categories/>

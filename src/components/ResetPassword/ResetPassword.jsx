@@ -2,9 +2,11 @@ import React from 'react'
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+
+
 import * as actions from '../../actions/actions'
 
-const LoginPage = () => {
+const LoginPage = ({usersData, loginAccout}) => {
     return (
         <div className="Reset">
             <div className="Reset-Title">RESET YOUR PASSWORD</div>
@@ -16,9 +18,18 @@ const LoginPage = () => {
             </div>
             <label htmlFor="email" className="Reset-Label">
                 Email
-                <input id='email' type="text" className="Reset-Input" placeholder='Enter your email'/>
+                <input 
+                id='email' 
+                type="text" 
+                className="Reset-Input" 
+                placeholder='Enter your email'
+                value={usersData.login.name}
+                onChange={(e) => loginAccout(e)}
+                required/>
             </label>
-            <button className="Reset-Button">CREATE AN ACCOUNT</button>
+            <button>
+            <NavLink to='/password-reset-confirm' className='Reset-Button'>SEND A PASSWORD RESET LINK</NavLink>
+            </button>
             <NavLink to='/login' className='Reset-Link'>Back to login</NavLink>
         </div>
     )

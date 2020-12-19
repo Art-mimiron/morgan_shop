@@ -4,6 +4,9 @@ import {connect} from 'react-redux';
 
 import * as actions from '../../actions/actions'
 
+import googleIcon from '../../img/ic_google.svg'
+import facebookIcon from '../../img/ic_facebook.svg'
+
 const RegistrationPage = () => {
     return (
         <div className="Registration">
@@ -33,8 +36,14 @@ const RegistrationPage = () => {
             </div>
             <div className="Registration-Divider">or</div>
             <div className="Registration-Option">
-                <button className="Registration-Social">With Google</button>
-                <button className="Registration-Social">With Facebook</button>
+                <button className="Login-Social">
+                <img src={googleIcon} alt="" className="Login-SocialIcon"/>
+                    With Google
+                </button>
+                <button className="Login-Social">
+                <img src={facebookIcon} alt="" className="Login-SocialIcon"/>
+                    With Facebook
+                </button>
             </div>
         </div>
     )
