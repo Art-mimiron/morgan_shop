@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/morgan_shop/static/css/main.013b3c89.chunk.css",
+    "main.css": "/morgan_shop/static/css/main.b54a9906.chunk.css",
     "main.js": "/morgan_shop/static/js/main.ec7ecc29.chunk.js",
     "main.js.map": "/morgan_shop/static/js/main.ec7ecc29.chunk.js.map",
     "runtime-main.js": "/morgan_shop/static/js/runtime-main.a128a66f.js",
@@ -8,7 +8,7 @@
     "static/js/2.054a2798.chunk.js": "/morgan_shop/static/js/2.054a2798.chunk.js",
     "static/js/2.054a2798.chunk.js.map": "/morgan_shop/static/js/2.054a2798.chunk.js.map",
     "index.html": "/morgan_shop/index.html",
-    "static/css/main.013b3c89.chunk.css.map": "/morgan_shop/static/css/main.013b3c89.chunk.css.map",
+    "static/css/main.b54a9906.chunk.css.map": "/morgan_shop/static/css/main.b54a9906.chunk.css.map",
     "static/js/2.054a2798.chunk.js.LICENSE.txt": "/morgan_shop/static/js/2.054a2798.chunk.js.LICENSE.txt",
     "static/media/eye.91e1b31c.svg": "/morgan_shop/static/media/eye.91e1b31c.svg",
     "static/media/ic_eye.f89a3099.svg": "/morgan_shop/static/media/ic_eye.f89a3099.svg",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.a128a66f.js",
     "static/js/2.054a2798.chunk.js",
-    "static/css/main.013b3c89.chunk.css",
+    "static/css/main.b54a9906.chunk.css",
     "static/js/main.ec7ecc29.chunk.js"
   ]
 }
