@@ -2,7 +2,8 @@ const initialState = {
     IsLoading: true,
     renderSize: 12,
     Products: [],
-    sortType: 'Newness'
+    sortType: 'Newness',
+    scrollArrow: 'bottom'
 }
 
 const productItems = (state = initialState, action) => {
@@ -30,6 +31,8 @@ const productItems = (state = initialState, action) => {
                                 return state;
                         }
                     })]}
+        case 'SCROLL_ARROW_TOGGLE':
+            return {...state, scrollArrow: action.payload}
         default:
             return state
     }

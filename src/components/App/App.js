@@ -21,11 +21,24 @@ class App extends Component {
   componentDidMount = () => {
     this.props.getCategories()
     this.props.getProducts()
+    window.addEventListener('scroll', this.scrollHandler)
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.scrollHandler)
+  }
+
+  scrollHandler = () => {
+    if (window.scrollY >= 300) {
+      this.props.toggleScrollArrow('top')
+    } else {
+      this.props.toggleScrollArrow('bottom')
+    }
   }
 
   render() {
     return (
-      <>
+      <div>
           <Router>
               <Navigation />
               <Switch>
@@ -60,7 +73,7 @@ class App extends Component {
                 </Route>
               </Switch>
           </Router>
-        </>
+        </div>
     );
   }
 }

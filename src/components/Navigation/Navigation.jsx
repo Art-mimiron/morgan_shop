@@ -13,7 +13,7 @@ import cartIcon from '../../img/cart.png'
 
 const Navigation = ({category, categoryFilter, resetShowCount, cart, modalCartTrigger}) => {
     return (
-        <nav className='Navigation'>
+        <nav className='Navigation' id='Navigation'>
             <div className="Navigation-URLs">
                 <NavLink to='/' >
                     <img 

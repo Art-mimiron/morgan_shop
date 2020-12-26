@@ -6,11 +6,10 @@ import * as actions from '../../actions/actions'
 
 function Categories({category, categoryFilter}) {
 	return (
-			<ul className='Categories'>
+			<ul className='Categories' id='Categories'>
 				{category.IsLoading ? <div>zdarova banditi</div> : category.Categories.map((item) => {
 					return (
 						<li className='Categories-Link' 
-						/* style={{order: item.menuOrder}} */
 						key={item.id}>
 								<NavLink 
 								to={`/${item.alias}`} 

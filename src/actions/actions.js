@@ -119,3 +119,10 @@ export const modalCartTrigger = () => ({
  export const toglePassVisibility = () => ({
         type: 'TOGLE_PASS_VISIBILITY'
  })
+
+ // scroll arrow toggle
+
+ export const toggleScrollArrow = (direction) => ({
+        type: 'SCROLL_ARROW_TOGGLE',
+        payload: direction
+ })

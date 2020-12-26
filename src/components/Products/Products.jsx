@@ -4,20 +4,30 @@ import * as actions from '../../actions/actions'
 
 import categoryFilter from '../../selectors/categoryFilterSelector'
 
+import arrow from '../../img/Nav_arrow.png'
 
-
-const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem, sortProducts, sort}) => {
+const ProductList = ({products, cart, renderCount, showMore, scrollArrow, buyItem, removeItem, sortProducts, sort}) => {
+	
 	return (
-		<div className='Product'>
-			<select 
-			name="sort" 
-			id="productSort"
-			defaultValue={sort}
-			onChange={(e) => sortProducts(e.target.value)}>
-				<option value="Newness">Newness</option>
-				<option value="Hight_price">Price hight to low</option>
-				<option value="Low_price">Price low to hight</option>
-			</select>
+		<div className='Product' >
+			<button className={scrollArrow === 'top' ? "Product-Scroll" : "Product-Scroll Product-Scroll_scroll "}
+			onClick={scrollArrow === 'top' ? () => window.scrollTo(0, 0) : () => window.scrollTo(0, document.documentElement.scrollHeight)}>
+				<img src={arrow} alt="" className="Product-Arrow"/>
+				<span className="Product-Nav">{scrollArrow === 'top' ? 'Top' : 'Scroll'}</span>
+			</button>
+			<div className="Product-Sort">
+				Sort by:
+					<select 
+					name="sort" 
+					id="productSort"
+					className="Product-Filter"
+					defaultValue={sort}
+					onChange={(e) => sortProducts(e.target.value)}>
+						<option value="Newness">Newness</option>
+						<option value="Hight_price">Price hight to low</option>
+						<option value="Low_price">Price low to hight</option>
+					</select>
+			</div>
 			<ul className='Product-List'>
 				{products.slice(0, renderCount).map((item) => {
 					return(
@@ -42,7 +52,7 @@ const ProductList = ({products, cart, renderCount, showMore, buyItem, removeItem
 				null
 				:
 				<button 
-				onClick={() => showMore(renderCount)} 
+				onClick={() => {showMore(renderCount); window.scrollTo(0, document.documentElement.scrollHeight)}} 
 				className='Product-Loader'>
 					Show more
 				</button> }
@@ -55,7 +65,8 @@ const mapStateToProps = (state) => {
 		products: categoryFilter(state),
 		renderCount: state.productItems.renderSize,
 		sort: state.productItems.sortType,
-		cart: state.cart
+		cart: state.cart,
+		scrollArrow: state.productItems.scrollArrow
 	}
 }
 

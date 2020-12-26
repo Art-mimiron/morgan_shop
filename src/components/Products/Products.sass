@@ -24,7 +24,7 @@
     &-Price
         font-weight: 500
     &-Loader
-        margin: 0 auto
+        margin: 10px auto 25px auto
         display: block
         width: 112px
         height: 41px
@@ -67,3 +67,33 @@
                 background-color: #fff
             &::after
                 height: 0px
+    &-Sort
+        font-weight: normal
+        font-size: 14px
+        line-height: 21px
+        color: #121212
+        margin-bottom: 16px
+    &-Filter
+        border: none
+        outline: none
+        padding-left: 12px
+    &-Scroll
+        position: fixed
+        z-index: 1
+        text-decoration: none
+        display: flex
+        flex-direction: column
+        align-items: center
+        bottom: 50px
+        right: 45px
+        transition: 0.5s ease all
+        &_scroll
+            transform: rotate(-180deg)
+    &-Arrow
+        margin: 8px 0
+    &-Nav
+        font-weight: 500
+        font-size: 14px
+        line-height: 21px
+        color: #121212
+        writing-mode: vertical-lr
