@@ -67,6 +67,16 @@
                 background-color: #fff
             &::after
                 height: 0px
+                width: 0px
+        &_search
+            height: 30px
+            width: 30px
+            top: 50%
+            transform: translateY(-50%)
+            &::before
+                width: 11px
+            &::after
+                height: 11px
     &-Sort
         font-weight: normal
         font-size: 14px
@@ -91,9 +101,18 @@
             transform: rotate(-180deg)
     &-Arrow
         margin: 8px 0
+        animation: slide 2.3s linear infinite
     &-Nav
         font-weight: 500
         font-size: 14px
         line-height: 21px
         color: #121212
         writing-mode: vertical-lr
+
+@keyframes slide
+    0%
+        transform: translateY(0)
+    50%
+        transform: translateY(-10px)
+    100%
+        transform: translateY(0)

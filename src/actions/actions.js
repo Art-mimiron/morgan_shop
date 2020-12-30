@@ -126,3 +126,15 @@ export const modalCartTrigger = () => ({
         type: 'SCROLL_ARROW_TOGGLE',
         payload: direction
  })
+
+ // searchBar actions
+
+ export const toggleSearchBar = () => ({
+        type: 'TOGGLE_SEARCHBAR',
+        payload: ''
+ })
+
+ export const generateSearchQuery = (e) => ({
+        type: 'GENERATE_SEARCH_QUERY',
+        payload: e.target.value
+ })

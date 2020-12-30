@@ -52,7 +52,10 @@ const ProductList = ({products, cart, renderCount, showMore, scrollArrow, buyIte
 				null
 				:
 				<button 
-				onClick={() => {showMore(renderCount); window.scrollTo(0, document.documentElement.scrollHeight)}} 
+				onClick={() => {
+					showMore(renderCount);
+					setTimeout(()=>{window.scrollTo(0, document.documentElement.scrollHeight)},80)
+				}} 
 				className='Product-Loader'>
 					Show more
 				</button> }
