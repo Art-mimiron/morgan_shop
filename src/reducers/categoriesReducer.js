@@ -1,7 +1,8 @@
 const initialState = {
     IsLoading: false,
     Categories: [],
-    CategoryFilterID: ''
+    CategoryFilterID: '',
+    NavMenuShow: false
 }
 
 const productCategories = (state = initialState, action) => {
@@ -14,6 +15,8 @@ const productCategories = (state = initialState, action) => {
             return {...state, Categories: action.payload}
         case 'SET_CATEGORY_FILTER':
             return {...state, CategoryFilterID: action.payload}
+        case 'TOGGLE_NAV_MENU':
+            return {...state, NavMenuShow: !state.NavMenuShow}
         default:
             return state
     }

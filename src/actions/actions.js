@@ -56,6 +56,12 @@ export const categoryFilter = (categoryID) => ({
     payload: categoryID
 })
 
+// Toggle mobile nav menu
+
+export const navMenuToggle = () => ({
+    type: 'TOGGLE_NAV_MENU'
+})
+
 // Show more products
 
 export const showMore = (num) => ({

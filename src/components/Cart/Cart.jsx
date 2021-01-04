@@ -77,7 +77,8 @@ const Cart = ({cart, category, removeItem, buyItem, decreseItem, setItemCount, c
                         <div className="Cart-Estimated">Estimated total</div>
                         <div className="Cart-TotalPrice">{`£${cart.cart.reduce((total, value) => total + (value.price * value.counter),0)+10}.00`}</div>
                     </div>
-                    <NavLink to='/order' className="ModalCart-Link" onClick={cleanCart}>CHECKOUT</NavLink>
+                    <NavLink to='/order' className="ModalCart-Link ModalCart-Link_mainCart" onClick={cleanCart}>CHECKOUT</NavLink>
+                    <NavLink to='/' className="Cart-Link_mobile">Continue shopping</NavLink>
                 </div>
             </div>
         )
